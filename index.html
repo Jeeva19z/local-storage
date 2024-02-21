@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Local Storage Example</title>
+    <script>
+        // Function to save data to local storage
+        function saveData() {
+            var data = document.getElementById("data").value;
+            localStorage.setItem("userInput", data);
+            // alert("Data saved!");
+        }
+
+        // Function to retrieve data from local storage
+        function loadData() {
+            var savedData = localStorage.getItem("userInput");
+            if(savedData) {
+                document.getElementById("display").innerText = savedData;
+            } else {
+                alert("No data found in local storage!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Local Storage Example</h2>
+    <input type="text" id="data" placeholder="Enter data">
+    <button onclick="saveData()">Save Data</button>
+    <button onclick="loadData()">Load Data</button>
+    <div id="display"></div>
+</body>
+</html>
